@@ -49,19 +49,15 @@ function getAverageColor(img) {
   var b = 0;
 
   var total = 0;
-  var total2 = 0;
   
   for (var i = 0, l = data.length; i < l; i += 4) {
-    if (data[i] == 0 && data[i+1] == 0 && data[i+2] == 0) {      
+    if (data[i] != 0 || data[i+1] != 0 || data[i+2] != 0) {      
       r += data[i];
       g += data[i+1];
       b += data[i+2]; 
       total += 1;
     }
-    total2 += 1;
   }
-  
-  console.log(total + ', ' + total2);
 
   r = Math.floor(r / total);
   g = Math.floor(g / total);
